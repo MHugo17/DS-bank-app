@@ -19,3 +19,4 @@ class Transaction:
     #extract transaction info
     def info(self):
         return(f'From {self.sender} to {self.recipient}: {self.subject} - {self.amount} € {self.time} {self.id}')
+
