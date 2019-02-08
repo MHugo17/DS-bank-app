@@ -29,11 +29,14 @@ class Bank:
 
     def konto_aus(self, *, year, month):
         selected_transactions = []  #the list of the transaction selected according to filter
-        for transaction in bank.transactions: #loop over all transactions
-            if transaction.time[6:7] == month or transaction.time[0:4] == year: #filter defining month or year of interest
+        for transaction in self.transactions: #loop over all transactions
+            if int(transaction.time[6:7]) == month and int(transaction.time[0:4]) == year: #filter defining month or year of interest
                 selected_transactions.append(transaction)
 
+        print('Konto Auszug Month:\n')
         for transaction in selected_transactions: #loop over selected transactions
-        
+            print((transaction.info(short=True)))  #orden
+
+        print('\nSweet!')
 
 

@@ -16,7 +16,11 @@ class Transaction:
         self.time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         #number id of transaction
         self.id = uuid.uuid4()
+
     #extract transaction info
-    def info(self):
-        return(f'From {self.sender} to {self.recipient}: {self.subject} - {self.amount} € {self.time} {self.id}')
+    def info(self, short=False):
+        if short:
+            return(f'From {self.sender} to {self.recipient}: {self.subject} - {self.amount} € {self.time}')
+        else:
+            return(f'From {self.sender} to {self.recipient}: {self.subject} - {self.amount} € {self.time} {self.id}')
 
