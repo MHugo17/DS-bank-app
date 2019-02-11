@@ -36,7 +36,4 @@ class Bank:
         print('Konto Auszug Month:\n')
         for transaction in selected_transactions: #loop over selected transactions
             print((transaction.info(short=True)))  #orden
-
-        print('\nSweet!')
-
-
+        print('\nNice!')
