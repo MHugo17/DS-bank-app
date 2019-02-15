@@ -11,25 +11,23 @@ import pandas as pd
 #load clean data
 
 
-class data_process:
-
-    def __init__(self, data):
-        self.data = data
+class DataProcess:
+    def __init__(self):
         self.raw_df = None
         self.clean_df = None
 
     def load(self, file_name, **kwargs):
-        file_name = f'../data/{file_name}.csv'
-        self.raw_df = pd.read_csv(file_name, **kwargs)  #reads the csv file and converts it to the dframe
-        print.self.raw_df.nunique() #shows nunique from the new df
-        self.raw_df.to_csv(f'../data/{file_name}_raw_data.csv')  #saves the original data in a new csv
-        return self.raw_df  #save the created dframe
+        data = f'../data/bank/{file_name}.csv'
+        df = pd.read_csv(data, **kwargs)  #reads the csv file and converts it to the dframe
+        print(df.nunique()) #shows nunique from the new df
+        self.raw_df = df
+        return df  #save the created dframe
 
-    #def clean(self, name, *, raw_df, drop_c, drop_NaN, drop_dup, convert):
-        #if
-        #self.raw_df.datadrop(['zipMerchant', 'zipcodeOri'], axis=1, inplace=True)
+    def clean(self, raw_df, *, raw_df, drop_c, drop_NaN, drop_dup, convert):
+        if
+        self.raw_df.datadrop(['zipMerchant', 'zipcodeOri'], axis=1, inplace=True)
 
-        #return.self.clean_df
+        return.self.clean_df
 
     #def __hot__(self, columns):
 
