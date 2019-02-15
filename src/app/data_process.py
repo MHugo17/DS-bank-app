@@ -20,14 +20,19 @@ class DataProcess:
         data = f'../data/bank/{file_name}.csv'
         df = pd.read_csv(data, **kwargs)  #reads the csv file and converts it to the dframe
         print(df.nunique()) #shows nunique from the new df
+        print(df.head()) #show head?
         self.raw_df = df
-        return df  #save the created dframe
 
-    def clean(self, raw_df, *, raw_df, drop_c, drop_NaN, drop_dup, convert):
-        if
-        self.raw_df.datadrop(['zipMerchant', 'zipcodeOri'], axis=1, inplace=True)
 
-        return.self.clean_df
+
+    def cleanc(self): #drop_NaN, drop_dup, convert
+
+        df_unique = self.raw_df.loc[:, self.raw_df.apply(pd.Series.nunique) != 1]
+        self.clean_df = df_unique
+        print(df_unique.head())
+
+        
+
 
     #def __hot__(self, columns):
 
