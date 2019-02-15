@@ -31,7 +31,7 @@ class DataProcess:
         self.clean_df = df_unique
         print(df_unique.head())
 
-        
+
 
 
     #def __hot__(self, columns):
